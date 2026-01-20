@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jhosbel Damian Rojas</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700&family=Source+Serif+Pro:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-blue: #2563eb;
+            --primary-blue-hover: #1d4ed8;
+            --text-dark: #1f2937;
+            --text-gray: #4b5563;
+            --text-light: #6b7280;
+            --border-color: #e5e7eb;
+            --bg-white: #ffffff;
+            --bg-light: #f9fafb;
+            --accent-border: #3b82f6;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--bg-white);
+            color: var(--text-dark);
+            line-height: 1.7;
+            font-size: 17px;
+        }
+
+        /* Container */
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+
+        /* Header / Profile Section */
+        .header {
+            display: flex;
+            align-items: flex-start;
+            gap: 2.5rem;
+            margin-bottom: 2.5rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .profile-image {
+            width: 160px;
+            height: 160px;
+            border-radius: 8px;
+            object-fit: cover;
+            flex-shrink: 0;
+            background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-family: 'Source Serif Pro', Georgia, serif;
+            font-size: 3rem;
+            font-weight: 700;
+        }
+
+        .header-content h1 {
+            font-family: 'Source Serif Pro', Georgia, serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 0.5rem;
+            line-height: 1.2;
+        }
+
+        .header-content .subtitle {
+            font-size: 1.1rem;
+            color: var(--text-gray);
+            margin-bottom: 1.25rem;
+        }
+
+        .header-content .subtitle a {
+            color: var(--primary-blue);
+            text-decoration: none;
+        }
+
+        .header-content .subtitle a:hover {
+            text-decoration: underline;
+        }
+
+        /* Navigation Buttons */
+        .nav-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+        }
+
+        .nav-btn {
+            display: inline-block;
+            padding: 0.5rem 1.25rem;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            text-decoration: none;
+            color: var(--text-dark);
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: all 0.2s ease;
+            background: var(--bg-white);
+        }
+
+        .nav-btn:hover {
+            border-color: var(--primary-blue);
+            color: var(--primary-blue);
+            background: #eff6ff;
+        }
+
+        /* Bio Section */
+        .bio {
+            margin-bottom: 3rem;
+        }
+
+        .bio-text {
+            border-left: 4px solid var(--accent-border);
+            padding-left: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .bio-text p {
+            color: var(--text-gray);
+            margin-bottom: 1rem;
+            font-size: 1.05rem;
+        }
+
+        .bio-text p:last-child {
+            margin-bottom: 0;
+        }
+
+        .bio-text strong {
+            color: var(--text-dark);
+            font-weight: 600;
+        }
+
+        .bio-text a {
+            color: var(--primary-blue);
+            text-decoration: none;
+        }
+
+        .bio-text a:hover {
+            text-decoration: underline;
+        }
+
+        /* Section Headers */
+        .section {
+            margin-bottom: 2.5rem;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 1.25rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .section-dot {
+            width: 10px;
+            height: 10px;
+            background: var(--primary-blue);
+            border-radius: 50%;
+        }
+
+        .section-title {
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--text-light);
+        }
+
+        /* Skills List */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+        }
+
+        .skill-item {
+            padding: 1rem 1.25rem;
+            background: var(--bg-light);
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+        }
+
+        .skill-item h4 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 0.35rem;
+        }
+
+        .skill-item p {
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        /* Experience / Education Items */
+        .item {
+            margin-bottom: 1.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .item h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 0.25rem;
+        }
+
+        .item .meta {
+            font-size: 0.95rem;
+            color: var(--text-light);
+            margin-bottom: 0.5rem;
+        }
+
+        .item .meta a {
+            color: var(--primary-blue);
+            text-decoration: none;
+        }
+
+        .item .meta a:hover {
+            text-decoration: underline;
+        }
+
+        .item p {
+            color: var(--text-gray);
+            font-size: 0.95rem;
+        }
+
+        /* Contact Section */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 1rem;
+            background: var(--bg-light);
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            text-decoration: none;
+            color: var(--text-dark);
+            transition: all 0.2s ease;
+        }
+
+        .contact-item:hover {
+            border-color: var(--primary-blue);
+            background: #eff6ff;
+        }
+
+        .contact-icon {
+            width: 20px;
+            height: 20px;
+            fill: var(--primary-blue);
+        }
+
+        .contact-item span {
+            font-size: 0.95rem;
+            font-weight: 500;
+        }
+
+        /* Footer */
+        footer {
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border-color);
+            text-align: center;
+        }
+
+        footer p {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        footer a {
+            color: var(--primary-blue);
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive */
+        @media (max-width: 640px) {
+            .container {
+                padding: 2rem 1.25rem;
+            }
+
+            .header {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                gap: 1.5rem;
+            }
+
+            .profile-image {
+                width: 140px;
+                height: 140px;
+            }
+
+            .header-content h1 {
+                font-size: 2rem;
+            }
+
+            .nav-buttons {
+                justify-content: center;
+            }
+
+            .bio-text {
+                padding-left: 1rem;
+            }
+
+            .skills-grid,
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="profile-image">JD</div>
+            <div class="header-content">
+                <h1>Jhosbel Damian Rojas</h1>
+                <p class="subtitle">Research Assistant at <a href="https://www.upn.edu.pe/" target="_blank">Universidad Privada del Norte</a></p>
+                <nav class="nav-buttons">
+                    <a href="mailto:damianrojasjhosbel@gmail.com" class="nav-btn">Contact</a>
+                    <a href="https://github.com/damianrojasjhosbel-sudo" target="_blank" class="nav-btn">GitHub</a>
+                    <a href="https://www.linkedin.com/in/jhosbel-damian-rojas-8278473a5/" target="_blank" class="nav-btn">LinkedIn</a>
+                    <a href="https://www.instagram.com/its_dami06/" target="_blank" class="nav-btn">Instagram</a>
+                </nav>
+            </div>
+        </header>
+
+        <!-- Bio -->
+        <section class="bio">
+            <div class="bio-text">
+                <p>
+                    I am a researcher working at the intersection of <strong>econometrics</strong>, <strong>data analysis</strong>, 
+                    and <strong>computational methods</strong>. My work focuses on translating programming languages 
+                    for econometric analysis and supporting research projects with data-driven insights.
+                </p>
+                <p>
+                    Currently, I work as a Research Assistant and Data Analyst, helping researchers transform 
+                    complex datasets into actionable conclusions. I am passionate about the power of data 
+                    to inform evidence-based decisions.
+                </p>
+                <p>
+                    <strong>Education:</strong> Currently pursuing studies at 
+                    <a href="https://www.upn.edu.pe/" target="_blank">Universidad Privada del Norte (UPN)</a>, Peru.
+                </p>
+            </div>
+        </section>
+
+        <!-- Skills -->
+        <section class="section">
+            <div class="section-header">
+                <span class="section-dot"></span>
+                <h2 class="section-title">Skills & Tools</h2>
+            </div>
+            <div class="skills-grid">
+                <div class="skill-item">
+                    <h4>Data Analysis</h4>
+                    <p>Excel, Statistics, Data Visualization</p>
+                </div>
+                <div class="skill-item">
+                    <h4>Econometrics</h4>
+                    <p>Stata, EViews, Regression Analysis</p>
+                </div>
+                <div class="skill-item">
+                    <h4>Programming</h4>
+                    <p>Python, R, SQL</p>
+                </div>
+                <div class="skill-item">
+                    <h4>Research</h4>
+                    <p>Methodology, Documentation, Review</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience -->
+        <section class="section">
+            <div class="section-header">
+                <span class="section-dot"></span>
+                <h2 class="section-title">Experience</h2>
+            </div>
+            <div class="item">
+                <h3>Research Assistant & Data Analyst</h3>
+                <p class="meta"><a href="https://www.upn.edu.pe/" target="_blank">Universidad Privada del Norte</a> · Present</p>
+                <p>Supporting academic research projects through data collection, cleaning, and analysis. Translating programming code across different languages for econometric applications.</p>
+            </div>
+        </section>
+
+        <!-- Education -->
+        <section class="section">
+            <div class="section-header">
+                <span class="section-dot"></span>
+                <h2 class="section-title">Education</h2>
+            </div>
+            <div class="item">
+                <h3>Universidad Privada del Norte (UPN)</h3>
+                <p class="meta">Peru · Currently Enrolled</p>
+                <p>Pursuing undergraduate studies with focus on economics and data analysis.</p>
+            </div>
+        </section>
+
+        <!-- Contact -->
+        <section class="section">
+            <div class="section-header">
+                <span class="section-dot"></span>
+                <h2 class="section-title">Contact</h2>
+            </div>
+            <div class="contact-grid">
+                <a href="mailto:damianrojasjhosbel@gmail.com" class="contact-item">
+                    <svg class="contact-icon" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                    <span>damianrojasjhosbel@gmail.com</span>
+                </a>
+                <a href="https://www.linkedin.com/in/jhosbel-damian-rojas-8278473a5/" target="_blank" class="contact-item">
+                    <svg class="contact-icon" viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
+                    <span>LinkedIn</span>
+                </a>
+                <a href="https://github.com/damianrojasjhosbel-sudo" target="_blank" class="contact-item">
+                    <svg class="contact-icon" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"/></svg>
+                    <span>GitHub</span>
+                </a>
+                <a href="https://www.instagram.com/its_dami06/" target="_blank" class="contact-item">
+                    <svg class="contact-icon" viewBox="0 0 24 24"><path d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6C20 5.61 18.39 4 16.4 4H7.6m9.65 1.5a1.25 1.25 0 0 1 1.25 1.25A1.25 1.25 0 0 1 17.25 8 1.25 1.25 0 0 1 16 6.75a1.25 1.25 0 0 1 1.25-1.25M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3z"/></svg>
+                    <span>Instagram</span>
+                </a>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <p>© 2025 Jhosbel Damian Rojas · <a href="mailto:damianrojasjhosbel@gmail.com">damianrojasjhosbel@gmail.com</a></p>
+        </footer>
+    </div>
+</body>
+</html>
